@@ -20,3 +20,23 @@ Q3)
 - A Fragment is a part of an activity, which contributes its own UI to that activity.
 - A Fragment can be thought like a sub activity, where as the complete screen with which user interacts is called as activity.
 - A Fragment are mostly a part of an activity.
+
+Q4)
+
+We can use interfaces as callbacks to do this task , i.e host activity implements interface and then passes it an argument to fragment as you can see in the sample app i have implemented.
+
+Q5)
+
+
+Yes , we can make an Entire app without Fragments. I only know few of the cases where someone absolutely have to use fragment in android App.
+
+for Example when you are using AsyncTask for background processing and have to retain the state on onreientation chages or configuration changes.
+
+Q6)
+
+- I know couple of issues realated to this AsyncTask. when an orientation or configuration change happens activity is recreatd and if the AsyncTask is ruunig in bakground will have old reference to the Activity ,this will try to update the old views which are not ailable.
+- This can also create memory leak issues as it is maininting the old activity references.
+- we can use AsyncTask within Fragment to avoid these complications , becasue fragments can retain their states and AsyncTask will have updated reference to the view.
+
+
+ 
